@@ -2,11 +2,17 @@
 
 @section('content')
 
-        <ul class="style1">
-            <li class="first">
-                <h1 class="'title">{{$article->title}}</h1>
-                <p>{{$article->body}}</p>
-            </li>
-        </ul>
+
+    <div id="'content">
+        <div class="'title">
+            <h2>{{$article->title}}</h2>
+        </div>
+        <h3>
+            {{$article->excerpt}}
+        </h3>
+        <p>
+            {{$article->body}}
+        </p>
+    </div>
 
 @endsection
