@@ -24,4 +24,10 @@ Route::get('/about',function(){
     ]);
 });
 
+Route::get('/articles', function(){
+    return view('article_selector', [
+        'articles' =>App\Article::all()
+    ]);
+});
+
 Route::get('/articles/{article}', 'ArticlesController@show');
