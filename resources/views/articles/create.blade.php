@@ -21,7 +21,11 @@
                 <div class="field">
                     <label class="label" for="title">Your Title</label>
                     <div class="control">
-                        <input class="input @error('title') is-danger @enderror" type="text" name="title" id = "tile">
+                        <input class="input @error('title') is-danger @enderror"
+                               type="text"
+                               name="title"
+                               id = "tile"
+                               value = "{{old('title')}}">
 
                         @error('title')
                             <p class="help is-danger">Title is required</p>
@@ -33,7 +37,7 @@
                 <div class="field">
                     <label class="label" for="excerpt">Your exerpt here</label>
                     <div class="control">
-                        <textarea class="textarea @error('excerpt') is-danger @enderror" name="excerpt" id = "excerpt"></textarea>
+                        <textarea class="textarea @error('excerpt') is-danger @enderror" name="excerpt" id = "excerpt" >{{old('excerpt')}}</textarea>
                         @error('excerpt')
                         <p class="help is-danger">Excerpt is required</p>
                         @enderror
@@ -44,7 +48,7 @@
                 <div class="field">
                     <label class="label" for="body">Your content here</label>
                     <div class="control">
-                        <textarea class="textarea @error('body') is-danger @enderror" name="body" id = "body"></textarea>
+                        <textarea class="textarea @error('body') is-danger @enderror" name="body" id = "body" >{{old('body')}}</textarea>
                         @error('body')
                         <p class="help is-danger">Body is required</p>
                         @enderror
