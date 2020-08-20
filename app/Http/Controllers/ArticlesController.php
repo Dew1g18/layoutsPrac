@@ -30,6 +30,13 @@ class ArticlesController extends Controller
     public function store()
     {
 //        die('sumbit button?');
+        request()->validate([
+            'title'=>'required',
+            'excerpt'=>'required',
+            'body'=>'required',
+        ]);
+
+
         $article = new Article();
         $article->title = request('title');
         $article->excerpt = request("excerpt");
