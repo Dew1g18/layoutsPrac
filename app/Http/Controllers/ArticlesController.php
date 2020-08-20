@@ -27,16 +27,40 @@ class ArticlesController extends Controller
     }
 
     //save an item
-    public function store(){
-        die('sumbit button?');
+    public function store()
+    {
+//        die('sumbit button?');
+        $article = new Article();
+        $article->title = request('title');
+        $article->excerpt = request("excerpt");
+        $article->body = request("body");
+
+        $article->save();
+
+
+        $name = $article->title;
+
+//        return redirect("/articles");
+
+        return redirect('/articles/'.$article->id);
+//        dump(request()->all());
     }
 
     //edit an item...
-    public function edit(){
-
+    public function edit($articleID){
+        $article = Article::find($articleID);
+        return view('articles.edit', ['article'=>$article]);
     }
 
-    public function update(){
+    public function update($articleID){
+        $article = Article::find($articleID);
+        $article->title = request('title');
+        $article->excerpt = request("excerpt");
+        $article->body = request("body");
+
+        $article->save();
+
+        return redirect('/articles/'.$article->id );
 
     }
 

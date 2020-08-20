@@ -1,18 +1,26 @@
 @extends('layout')
 
+@section('head')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"  rel="stylesheet">
+@endsection
+
 @section('content')
 
 
     <div id="'content">
-        <div class="'title">
-            <h2>{{$article->title}}</h2>
-        </div>
-        <h3>
+            <h2 class ='title'>{{$article->title}}</h2>
+        <h3 class="subtitle">
             {{$article->excerpt}}
         </h3>
         <p>
             {{$article->body}}
         </p>
+        <div class="control">
+            <button class="button is-link" type="edit" id="edit_button">Edit</button>
+            <button class="button is-link" type="delete">Delete</button>
+
+
+        </div>
     </div>
 
 @endsection

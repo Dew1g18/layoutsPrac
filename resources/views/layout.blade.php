@@ -21,8 +21,7 @@ Released   : 20140225
     <link href="\default.css" rel="stylesheet"/>
     <link href="\fonts.css" rel="stylesheet"/>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"  rel="stylesheet">
-
+    @yield('head')
 
 </head>
 <body>
