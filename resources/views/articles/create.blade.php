@@ -20,14 +20,14 @@
                 <div class="field">
                     <label class="label" for="title">Your Title</label>
                     <div class="control">
-                        <input class="input" type="text" name="" id = "tile">
+                        <input class="input" type="text" name="title" id = "tile">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="excerpt">Your exerpt here</label>
                     <div class="control">
-                        <textarea class="textarea" type="textarea" name="excerpt" id = "excerpt"></textarea>
+                        <textarea class="textarea" name="excerpt" id = "excerpt"></textarea>
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
                 <div class="field">
                     <label class="label" for="body">Your content here</label>
                     <div class="control">
-                        <textarea class="textarea" type="textarea" name="body" id = "body"></textarea>
+                        <textarea class="textarea" name="body" id = "body"></textarea>
                     </div>
                 </div>
 
