@@ -10,8 +10,8 @@ class ArticlesController extends Controller
 {
 
     //show a specific item
-    public function show($articleID){
-        $article = Article::find($articleID);
+    public function show(Article $article){
+//        $article = Article::findOrFail($articleID);
         return View('articles.show', ['article'=> $article]);
     }
 
@@ -30,58 +30,42 @@ class ArticlesController extends Controller
     public function store()
     {
 //        die('sumbit button?');
-        request()->validate([
-            'title'=>'required',
-            'excerpt'=>'required',
-            'body'=>'required',
-        ]);
+        $validatedAttr = $this->validateArticle();
 
+        $article = Article::create($validatedAttr);
 
-        $article = new Article();
-        $article->title = request('title');
-        $article->excerpt = request("excerpt");
-        $article->body = request("body");
-
-        $article->save();
-
-
-        $name = $article->title;
-
-//        return redirect("/articles");
-
-        return redirect('/articles/'.$article->id);
+        return redirect(route('articles.show', $article));
 //        dump(request()->all());
     }
 
     //edit an item...
-    public function edit($articleID){
-        $article = Article::find($articleID);
+    public function edit(Article $article){
         return view('articles.edit', ['article'=>$article]);
     }
 
 
-    public function update($articleID){
+    public function update(Article $article){
 
-        request()->validate([
+        $validatedAttr = $this->validateArticle();
 
-            'title'=>'required',
-            'excerpt'=>'required',
-            'body'=>'required'
-        ]);
+        $article->update($validatedAttr);
 
-        $article = Article::find($articleID);
-        $article->title = request('title');
-        $article->excerpt = request("excerpt");
-        $article->body = request("body");
 
-        $article->save();
-
-        return redirect('/articles/'.$article->id );
+        return redirect(route('articles.show',$article));
 
     }
 
     public function destroy(){
 
+    }
+
+    protected function validateArticle(){
+        return request()->validate([
+
+            'title'=>'required',
+            'excerpt'=>'required',
+            'body'=>'required'
+        ]);
     }
 }
 
