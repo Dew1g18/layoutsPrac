@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
 
             $table->timestamps();
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')
                 ->references('id')
