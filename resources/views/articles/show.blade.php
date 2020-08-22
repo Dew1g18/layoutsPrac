@@ -17,8 +17,7 @@
         </p>
         <div class="control">
             <button class="button is-link" type="edit" id="edit_button" onclick="window.location.href='{{route('articles.edit', $article)}}'">Edit</button>
-            <button class="button is-link" type="delete" onclick="window.location.href='{{route('articles.index')}}'; {{$article->destroy($article)}};" >Delete</button>
-
+            <button class="button is-link" type="delete" onclick="window.location.href='{{route('articles.index')}}'; {{$article->delete()}};" >Delete</button>
 
         </div>
     </div>
