@@ -55,8 +55,8 @@ class ArticlesController extends Controller
 
     }
 
-    public function destroy(){
-
+    public function destroy(Article $article){
+        $article->delete();
     }
 
     protected function validateArticle(){
