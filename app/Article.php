@@ -12,7 +12,7 @@ class Article extends Model
         return route('articles.show',$this);
     }
 
-    ///Just commenting a change in hopes that I can get windows to actually update bloody github online
+
 
     public function user(){
         return $this->belongsTo(User::class)->withDefault([
