@@ -30,6 +30,10 @@
                     </div>
                 </div>
 
+                <div>
+{{--                    <p>Written by: {{$article->user()->name}}</p>--}}
+                </div>
+
                 <div class="field">
                     <label class="label" for="excerpt">Excerpt</label>
                     <div class="control">

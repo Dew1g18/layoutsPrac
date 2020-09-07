@@ -15,9 +15,24 @@
         <p>
             {{$article->body}}
         </p>
+
+        <p style="margin-outside: 1em">
+            @foreach($article->tags as $tag)
+                <a href="/articles?tag={{$tag->name}}">{{$tag->name}}</a>
+            @endforeach
+        </p>
         <div class="control">
-            <button class="button is-link" type="edit" id="edit_button" onclick="window.location.href='{{route('articles.edit', $article)}}'">Edit</button>
-            <button class="button is-link" type="delete" onclick="window.location.href='{{route('articles.index')}}'; {{$article->delete()}};" >Delete</button>
+
+{{--            <button type="button"--}}
+{{--                    onclick="Url.Action('ArticlesController@edit')">Edit</button>--}}
+
+
+
+{{--            <button class="button" type="edit" id="edit_button" onclick="{{'ArticlesController@edit', $article}}">Edit</button>--}}
+            <button class="button" type="edit" id="edit_button" onclick="window.location.href='{{route('articles.edit', $article)}}'">Edit</button>
+            <button class="button" type="delete" onclick="window.location.href='{{action('ArticlesController@destroy', ['article'=>$article])}}'">Delete</button>
+
+{{--            <button class="button" type="delete" onclick="{{'ArticlesController@destroy', $article}}">Delete</button>--}}
         </div>
     </div>
 

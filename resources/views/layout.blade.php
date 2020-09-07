@@ -26,7 +26,7 @@ Released   : 20140225
 </head>
 <body>
 
-<div id="header-wrapper">
+<div id="header-wrapper" style="margin-bottom: 1em">
     <div id="header" class="container">
         <div id="logo">
             <h1><a href="#">SimpleWork</a></h1>
