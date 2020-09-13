@@ -30,7 +30,7 @@
 
 {{--            <button class="button" type="edit" id="edit_button" onclick="{{'ArticlesController@edit', $article}}">Edit</button>--}}
             <button class="button" type="edit" id="edit_button" onclick="window.location.href='{{route('articles.edit', $article)}}'">Edit</button>
-            <button class="button" type="delete" onclick="window.location.href='{{action('ArticlesController@destroy', ['article'=>$article])}}'">Delete</button>
+            <button class="button" type="delete" onclick="window.location.href='{{route('articles.delete', $article)}}'">Delete</button>
 
 {{--            <button class="button" type="delete" onclick="{{'ArticlesController@destroy', $article}}">Delete</button>--}}
         </div>

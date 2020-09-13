@@ -17,8 +17,12 @@ class ArticlesController extends Controller
 
     //list all items
     public function index(){
-        $articles = Article::latest()->get();
-        return view('articles.index', ['articles'=>$articles]);
+        if(request('tag')){
+            $articles = Tag::where('name', request('tag'))->firstOrFail();
+        }else {
+            $articles = Article::latest()->get();
+        }
+        return view('articles.index', ['articles' => $articles]);
     }
 
     //create new item

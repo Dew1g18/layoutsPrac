@@ -31,6 +31,8 @@ Route::get('/about',function(){
 //});
 
 
+
+
 Route::get('/articles/create','ArticlesController@create');
 
 Route::post('/articles', 'ArticlesController@store');
@@ -38,5 +40,7 @@ Route::post('/articles', 'ArticlesController@store');
 Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
 Route::get("/articles/{article}/edit", "ArticlesController@edit")->name('articles.edit');
 Route::put("/articles/{article}", "ArticlesController@update" );
+
+Route::get('/articles/{article}/delete', 'ArticlesController@destroy')->name('articles.delete');
 
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
